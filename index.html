@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Hadith Post</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #a81a1a;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 60%;
+            margin: 50px auto;
+            background: linear-gradient(135deg, #ffcc00, #ff6600);
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: background-color 0.5s ease;
+        }
+        .header {
+            background-color: #f39c12;
+            padding: 20px;
+            text-align: center;
+            color: #fff;
+            font-size: 24px;
+            font-weight: bold;
+            position: relative;
+        }
+        .header:before {
+            content: "\f0ac";
+            font-family: FontAwesome;
+            position: absolute;
+            left: 10px;
+            top: 10px;
+            font-size: 30px;
+        }
+        .header:after {
+            content: "\f664";
+            font-family: FontAwesome;
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            font-size: 30px;
+        }
+        .hadith-content {
+            padding: 40px;
+            text-align: center;
+            background-color: #08aeea;
+            background: linear-gradient(to right, rgb(84, 239, 84), #08aeea);
+            border-radius: 0 0 15px 15px;
+            position: relative;
+        }
+        .hadith-content p {
+            font-size: 20px;
+            font-style: italic;
+            color: #333;
+            line-height: 1.6;
+        }
+        .hadith-content .reference {
+            margin-top: 20px;
+            font-size: 16px;
+            color: #666;
+        }
+        .religious-icons {
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            font-size: 60px;
+            color: rgba(255, 255, 255, 0.5);
+        }
+        .bottom-icons {
+            position: absolute;
+            bottom: -10px;
+            right: -10px;
+            font-size: 60px;
+            color: rgba(255, 255, 255, 0.5);
+        }
+        .update-text {
+            background-color: #27ae60;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+        .color-picker {
+            background:linear-gradient(to right, rgb(84, 239, 84), #08aeea) ;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .arabic {
+            font-size: 22px;
+            font-family: 'Amiri', serif;
+            color: #007BFF;
+            margin-bottom: 20px;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+<div class="container" id="hadith-container">
+    <div class="header">
+        Daily Hadith
+    </div>
+    
+    <div class="hadith-content">
+        <div class="religious-icons">
+            <i class="fas fa-mosque"></i>
+        </div>
+        
+        <p id="english-hadith">"This world is but provisions, and the best of provisions is a righteous wife."</p>
+        <p class="arabic" id="arabic-hadith">"الدُّنْيَا مَتَاعٌ، وَخَيْرُ مَتَاعِهَا الْمَرْأَةُ الصَّالِحَةُ"</p>
+        
+        <div class="reference">
+            - Sahih Muslim 1467
+        </div>
+        
+        <div class="bottom-icons">
+            <i class="fas fa-praying-hands"></i>
+        </div>
+    </div>
+    
+    <div class="update-text" onclick="updateHadith()">
+        Update Today's Hadith
+    </div>
+    
+    <div class="color-picker" onclick="changeColor()">
+        Change Background Color
+    </div>
+</div>
+
+<script>
+    // Function to update Hadith
+    function updateHadith() {
+        const newHadith = prompt("Enter the English version of the Hadith:");
+        if (newHadith) {
+            document.getElementById('english-hadith').innerText = newHadith;
+        }
+    }
+
+    // Function to change the background color
+    function changeColor() {
+        const newColor = prompt("Enter a color code (e.g., #ffcc00 or 'red'):");
+        if (newColor) {
+            document.getElementById('hadith-container').style.background = newColor;
+        }
+    }
+</script>
+
+</body>
+</html>
